@@ -1,9 +1,15 @@
 import { profile } from "@/data/profile";
 
 export async function shareVCard() {
-  const vcardData = createVCard();
-  const file = new File([vcardData], "Jitendra_Sachwani.txt", {
-    type: "text/plain",
+  const blob = new Blob([createVCard()], {
+    type: "text/vcard",
+  });
+
+  const response = await fetch("/contact.vcf");
+  const blob2 = await response.blob();
+
+  const file = new File([blob2], "Jitendra_Sachwani.vcf", {
+    type: blob2.type || "text/x-vcard",
   });
 
   try {
