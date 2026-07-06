@@ -60,22 +60,13 @@ export function SkillsCarousel({ compact = false }: SkillsCarouselProps) {
   const edgeWidth = compact ? "w-8" : "w-16 md:w-32";
 
   return (
-    <div className={`relative w-full overflow-hidden select-none ${compact ? "py-1.5" : "py-4"}`}>
-      {/* Edge fade */}
-      <div
-        className={`absolute left-0 top-0 bottom-0 ${edgeWidth} z-10 pointer-events-none`}
-        style={{
-          background: "linear-gradient(to right, var(--background), transparent)",
-        }}
-      />
-
-      <div
-        className={`absolute right-0 top-0 bottom-0 ${edgeWidth} z-10 pointer-events-none`}
-        style={{
-          background: "linear-gradient(to left, var(--background), transparent)",
-        }}
-      />
-
+    <div
+      className={`relative w-full overflow-hidden select-none ${compact ? "py-1.5" : "py-4"}`}
+      style={{
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+      }}
+    >
       {/* First Row */}
       <div
         className={`flex w-max animate-marquee hover:[animation-play-state:paused] ${
