@@ -15,34 +15,32 @@ export async function shareVCard() {
     if ((err as DOMException).name === "AbortError") {
       return;
     }
-
+    
+    // TODO: Fix Share API causing PermissionDeniedError in some browsers causing fallback to download
     console.error("Share failed, falling back to download", err);
+
     downloadVCard(vcardData);
   }
 }
 
 function createVCard() {
-  return [
-    "BEGIN:VCARD",
-    "VERSION:3.0",
-    `FN:${profile.fullName}`,
-    `N:${profile.lastName};${profile.firstName};;;`,
-    `ORG:${profile.company}`,
-    `TITLE:${profile.title}`,
-    `TEL;TYPE=CELL,VOICE:${profile.phone}`,
-    `EMAIL;TYPE=PREF,INTERNET:${profile.email}`,
-    `URL:${profile.website}`,
-    `X-SOCIALPROFILE;type=linkedin:${profile.social.linkedin}`,
-    `X-SOCIALPROFILE;type=github:${profile.social.github}`,
-    `ADR;TYPE=HOME:;;;${profile.location.city};${profile.location.state};;${profile.location.country}`,
-    `NOTE:${profile.bio}`,
-    "END:VCARD",
-  ].join("\r\n");
+  return `BEGIN:VCARD
+VERSION:3.0
+FN:${profile.fullName}
+N:${profile.lastName};${profile.firstName};;;
+ORG:${profile.company}
+TITLE:${profile.title}
+TEL;TYPE=CELL,VOICE:${profile.phone}
+EMAIL;TYPE=PREF,INTERNET:${profile.email}
+URL:${profile.website}
+ADR;TYPE=HOME:;;;${profile.location.city};${profile.location.state};;${profile.location.country}
+NOTE:${profile.bio}
+END:VCARD`;
 }
 
 function downloadVCard(vcardData: string) {
   const blob = new Blob([vcardData], {
-    type: "text/vcard;charset=utf-8",
+    type: "text/x-vcard;charset=utf-8",
   });
 
   const url = URL.createObjectURL(blob);

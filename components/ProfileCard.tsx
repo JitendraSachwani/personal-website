@@ -89,7 +89,7 @@ export function ProfileCard() {
   };
 
   // Card Content Elements to reuse between mobile and desktop layout
-  const renderFrontContent = (onViewWork?: () => void) => (
+  const renderFrontContent = () => (
     <div className="flex flex-col items-center text-center h-full justify-between pt-16 pb-8 px-6 md:px-8 relative select-none">
       {/* Absolute profile image floating half above card top */}
       <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
@@ -189,23 +189,13 @@ export function ProfileCard() {
           <UserPlus className="w-4 h-4" />
           <span>Add Contact</span>
         </button>
-        {onViewWork ? (
-          <button
-            onClick={onViewWork}
-            className="flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-border bg-card hover:bg-foreground/5 text-foreground font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <span>View Work</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        ) : (
-          <Link
-            href="/work"
-            className="flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-border bg-card hover:bg-foreground/5 text-foreground font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            <span>View Work</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        )}
+        <Link
+          href="/work"
+          className="flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-border bg-card hover:bg-foreground/5 text-foreground font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+        >
+          <span>View Work</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </div>
   );
