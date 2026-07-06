@@ -23,6 +23,9 @@ export async function shareVCard() {
   });
 
   try {
+    alert(`Secure: ${window.isSecureContext}`)
+    alert(`canShare: ${typeof navigator.canShare}`)
+
     console.log(`navigator.canShare: ${navigator.canShare?.({ files: [file] })}`);
     // Share if supported
     if (navigator.canShare?.({ files: [file] })) {
@@ -50,6 +53,7 @@ export async function shareVCard() {
 
     URL.revokeObjectURL(url);
   } catch (err) {
+    alert(`Error: ${(err as Error).name} - ${(err as Error).message}`);
     // User cancelled the share dialog
     if ((err as Error).name !== "AbortError") {
       console.error("Unable to share vCard", err);
