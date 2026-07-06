@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Background } from "@/components/Background";
 import { profile } from "@/data/profile";
-import Debug from "@/components/Debug";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,10 +59,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <Debug />
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-          {/* <div className="noise-overlay" />
-          <Background /> */}
+          <div className="noise-overlay" />
+          {/* <Background /> */}
           <div className="fixed top-6 right-6 px-6 z-50 transition-all duration-300">
             <ThemeToggle />
           </div>
