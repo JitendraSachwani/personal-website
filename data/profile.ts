@@ -17,7 +17,7 @@ export const profile = {
   email: "sachwani.jitendra+freelance@gmail.com",
 
   company: "Jitendra Sachwani",
-  website: "personal-website-beta-six-93.vercel.app",
+  website: "https://personal-website-beta-six-93.vercel.app",
 
   location: {
     city: "Mumbai",
