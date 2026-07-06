@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, Briefcase, ExternalLink } from "lucide-react";
+import { ChevronLeft, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 import { profile } from "@/data/profile";
 
@@ -134,8 +134,8 @@ export default function WorkPage() {
           </h1>
         </div>
         <p className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed font-body">
-          A curated collection of websites, applications and platforms I've designed and built, from
-          polished marketing sites to scalable full-stack systems.
+          A curated collection of websites, applications and platforms designed and built by me,
+          from polished marketing sites to scalable full-stack systems.
         </p>
       </section>
 

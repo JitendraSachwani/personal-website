@@ -18,7 +18,7 @@ export const profile = {
   bio: "Building scalable software with clean architecture and beautiful user experiences.",
   subBio: "Specializing in Next.js, React, Node.js, and Cloud Infrastructure.",
 
-  phone: "+911234567890",
+  phone: "+919969718822",
   email: "sachwani.jitendra+freelance@gmail.com",
 
   company: "Jitendra Sachwani",
