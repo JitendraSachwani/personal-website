@@ -109,10 +109,10 @@ body {
 }
 
 /* Wave overlay */
-.wave-pattern {
+/* .wave-pattern {
   background-image: radial-gradient(circle at 100% 150%, transparent 24%, var(--border) 24%, var(--border) 25%, transparent 25%, transparent 49%, var(--border) 49%, var(--border) 50%, transparent 50%);
   background-size: 40px 40px;
-}
+} */
 
 /* Infinite Marquee */
 @utility animate-marquee {
