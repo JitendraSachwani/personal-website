@@ -3,13 +3,13 @@ import { profile } from "@/data/profile";
 export async function shareVCard() {
   const vcardData = createVCard();
   const file = new File([vcardData], "Jitendra_Sachwani.vcf", {
-    type: "text/x-vcard",
+    type: "text/plain",
   });
 
   try {
     await navigator.share({
       title: profile.fullName,
-      files: [new File(["Hello"], "hello.txt", { type: "text/plain" })],
+      files: [file],
     });
   } catch (err) {
     if ((err as DOMException).name === "AbortError") {
