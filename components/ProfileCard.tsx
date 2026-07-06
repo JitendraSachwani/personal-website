@@ -18,7 +18,7 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import { shareVCard, shareVCard2 } from "@/lib/vcard";
+import { shareVCard } from "@/lib/vcard";
 import { SkillsCarousel } from "@/components/SkillsCarousel";
 import { profile } from "@/data/profile";
 
@@ -183,7 +183,7 @@ export function ProfileCard() {
       {/* CTA Buttons */}
       <div className="grid grid-cols-2 gap-3 w-full mt-2">
         <button
-          onClick={shareVCard2}
+          onClick={shareVCard}
           className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-primary hover:bg-accent text-white font-semibold text-xs md:text-sm shadow-lg shadow-primary/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
         >
           <UserPlus className="w-4 h-4" />
