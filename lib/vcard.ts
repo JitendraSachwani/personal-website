@@ -3,7 +3,7 @@ import { profile } from "@/data/profile";
 export async function shareVCard() {
   const vcardData = createVCard();
   const file = new File([vcardData], "Jitendra_Sachwani.vcf", {
-    type: "text/plain",
+    type: "text/vcard",
   });
 
   try {
@@ -43,7 +43,7 @@ function createVCard() {
 
 function downloadVCard(vcardData: string) {
   const blob = new Blob([vcardData], {
-    type: "text/vcard;charset=utf-8",
+    type: "text/vcard",
   });
 
   const url = URL.createObjectURL(blob);
