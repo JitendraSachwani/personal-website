@@ -1,5 +1,17 @@
 import { profile } from "@/data/profile";
 
+export async function shareVCard2() {
+  const file = new File(
+    ["Hello Pragya~!"],
+    "hello_pragya.txt",
+    { type: "text/plain" }
+  );
+
+  await navigator.share({
+    files: [file],
+  });
+}
+
 export async function shareVCard() {
   const vcardData = [
     "BEGIN:VCARD",
