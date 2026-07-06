@@ -25,37 +25,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jitendra Sachwani | Senior Software Engineer & Full Stack Developer",
-  description:
-    "Building scalable software with clean architecture and beautiful user experiences. Specializing in Next.js, React, Node.js, and Cloud Infrastructure.",
-  keywords: [
-    "Jitendra Sachwani",
-    "Full Stack Developer",
-    "Senior Software Engineer",
-    "Next.js Portfolio",
-    "React Developer",
-    "Clean Architecture",
-    "Docker",
-    "Kubernetes",
-    "AWS",
-    "TypeScript",
-  ],
-  authors: [{ name: "Jitendra Sachwani", url: "https://jitendrasachwani.dev" }],
-  creator: "Jitendra Sachwani",
+  title: profile.seo.title,
+  description: profile.seo.description,
+  keywords: [...profile.seo.keywords],
+  authors: [{ name: profile.fullName, url: profile.website }],
+  creator: profile.fullName,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jitendrasachwani.dev",
-    title: "Jitendra Sachwani | Senior Software Engineer & Full Stack Developer",
-    description:
-      "Building scalable software with clean architecture and beautiful user experiences.",
-    siteName: "Jitendra Sachwani Portfolio",
+    url: profile.website,
+    title: profile.seo.title,
+    description: profile.seo.description,
+    siteName: `${profile.fullName} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jitendra Sachwani | Senior Software Engineer & Full Stack Developer",
-    description:
-      "Building scalable software with clean architecture and beautiful user experiences.",
+    title: profile.seo.title,
+    description: profile.seo.description,
   },
   robots: {
     index: true,

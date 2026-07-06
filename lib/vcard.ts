@@ -29,7 +29,7 @@ VERSION:3.0
 FN:${profile.fullName}
 N:${profile.lastName};${profile.firstName};;;
 ORG:${profile.company}
-TITLE:${profile.title}
+TITLE:${profile.combinedTitle}
 TEL;TYPE=CELL,VOICE:${profile.phone}
 EMAIL;TYPE=PREF,INTERNET:${profile.email}
 URL:${profile.website}

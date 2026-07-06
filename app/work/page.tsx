@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, Briefcase, ExternalLink, Filter } from "lucide-react";
+import { ChevronLeft, Briefcase, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
-import { Background } from "@/components/Background";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface Project {
   id: string;

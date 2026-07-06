@@ -120,12 +120,12 @@ export function ProfileCard() {
         whileTap={{ scale: 0.95 }}
       >
         <ChevronsLeft className="w-3.5 h-3.5" />
-        <span>Swipe or Tap here to Know More</span>
+        <span>Swipe Page or Tap here to Know More</span>
         <ChevronsRight className="w-3.5 h-3.5" />
       </motion.button>
 
       {/* Skills Section */}
-      <section className="flex flex-col items-center w-full my-6">
+      <section className="flex flex-col items-center w-full my-4">
         <div className="flex items-center gap-2 text-primary font-bold font-heading mb-2">
           <Braces className="w-5 h-5 text-primary" />
           <h2 className="text-lg">Skills</h2>
@@ -137,7 +137,7 @@ export function ProfileCard() {
       </section>
 
       {/* Social Icons */}
-      <div className="flex items-center gap-4 my-6">
+      <div className="flex items-center gap-4 my-4">
         <a
           href={`tel:${profile.phone}`}
           rel="noopener noreferrer"
