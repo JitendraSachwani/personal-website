@@ -1,15 +1,9 @@
 import { profile } from "@/data/profile";
 
 export async function shareVCard() {
-  const blob = new Blob([createVCard()], {
-    type: "text/vcard",
-  });
-
-  const response = await fetch("/contact.vcf");
-  const blob2 = await response.blob();
-
-  const file = new File([blob2], "Jitendra_Sachwani.vcf", {
-    type: blob2.type || "text/x-vcard",
+  const vcardData = createVCard();
+  const file = new File([vcardData], "Jitendra_Sachwani.vcf", {
+    type: "text/x-vcard",
   });
 
   try {
@@ -21,10 +15,9 @@ export async function shareVCard() {
     if ((err as DOMException).name === "AbortError") {
       return;
     }
-    console.error("Share failed, falling back to download", err);
 
-    alert(`Failed to share vCard. Falling back to download. Error: ${(err as Error).message}`);
-    // downloadVCard(vcardData);
+    console.error("Share failed, falling back to download", err);
+    downloadVCard(vcardData);
   }
 }
 
