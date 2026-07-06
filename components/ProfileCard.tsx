@@ -125,7 +125,7 @@ export function ProfileCard() {
         </div>
         <div className="w-8 h-[2px] bg-primary rounded-full mb-3" />
         <div className="w-full">
-          <SkillsMarquee compact />
+          <SkillsMarquee />
         </div>
       </section>
 
@@ -220,7 +220,7 @@ export function ProfileCard() {
           </div>
           <div className="w-8 h-[2px] bg-primary rounded-full mb-3" />
           <div className="w-full">
-            <SkillsMarquee compact />
+            <SkillsMarquee />
           </div>
         </section>
 
