@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { shareVCard } from "@/lib/contact";
-import { SkillsCarousel } from "@/components/SkillsCarousel";
+import { SkillsMarquee } from "@/components/SkillsMarquee";
 import { profile } from "@/data/profile";
 
 // Typings for typewriter
@@ -125,7 +125,7 @@ export function ProfileCard() {
         </div>
         <div className="w-8 h-[2px] bg-primary rounded-full mb-3" />
         <div className="w-full">
-          <SkillsCarousel compact />
+          <SkillsMarquee compact />
         </div>
       </section>
 
@@ -190,7 +190,7 @@ export function ProfileCard() {
 
   const renderBackContent = () => (
     <div className="flex flex-col justify-between h-full py-8 px-6 md:px-8 relative select-none">
-      <div className="space-y-6 overflow-y-auto pr-1">
+      <div className="flex flex-1 flex-col gap-6">
         {/* About Me Section */}
         <section>
           <div className="flex items-center gap-2 text-primary font-bold font-heading mb-2">
@@ -220,7 +220,7 @@ export function ProfileCard() {
           </div>
           <div className="w-8 h-[2px] bg-primary rounded-full mb-3" />
           <div className="w-full">
-            <SkillsCarousel compact />
+            <SkillsMarquee compact />
           </div>
         </section>
 
@@ -232,7 +232,7 @@ export function ProfileCard() {
           </div>
           <div className="w-8 h-[2px] bg-primary rounded-full mb-3" />
 
-          <div className="space-y-2.5">
+          <div className="grid gap-3">
             <div className="flex items-center gap-3 text-xs md:text-sm">
               <Phone className="w-4 h-4 text-muted-foreground shrink-0" />
               <a
