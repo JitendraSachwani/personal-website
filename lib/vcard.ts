@@ -2,7 +2,7 @@ import { profile } from "@/data/profile";
 
 export async function shareVCard() {
   const vcardData = createVCard();
-  const file = new File([vcardData], "Jitendra_Sachwani.vcf", {
+  const file = new File([vcardData], "Jitendra_Sachwani.txt", {
     type: "text/plain",
   });
 
