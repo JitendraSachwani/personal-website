@@ -2,13 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Background } from "@/components/Background";
 import { ProfileCard } from "@/components/ProfileCard";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
     <main className="relative min-h-dvh flex flex-col justify-between overflow-x-hidden font-body">
+      
       {/* Hero Section Container */}
       <div className="flex flex-col items-center justify-center pt-24">
         <motion.div
