@@ -23,8 +23,7 @@ export async function shareVCard() {
   });
 
   try {
-    alert(`Secure: ${window.isSecureContext}`)
-    alert(`canShare: ${typeof navigator.canShare}`)
+    alert(`canShare: ${typeof navigator.canShare?.({ files: [file] })}`)
 
     console.log(`navigator.canShare: ${navigator.canShare?.({ files: [file] })}`);
     // Share if supported
