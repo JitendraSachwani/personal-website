@@ -59,7 +59,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" forcedTheme="dark" disableTransitionOnChange>
           <div className="noise-overlay" />
           <Background />
           <div className="fixed top-6 right-6 px-6 z-50 transition-all duration-300">
