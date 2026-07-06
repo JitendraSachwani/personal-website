@@ -79,7 +79,7 @@ export function ProfileCard() {
           <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary to-accent opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
           <div className="relative w-full h-full rounded-full overflow-hidden border border-border">
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt={profile.fullName}
               fill
               sizes="(max-width: 768px) 112px, 128px"
