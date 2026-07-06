@@ -144,7 +144,7 @@ export function ProfileCard() {
       {/* Social Icons */}
       <div className="flex items-center gap-4 my-6">
         <a
-          href="tel:+1234567890"
+          href={`tel:${profile.phone}`}
           rel="noopener noreferrer"
           className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Call Jitendra"
@@ -153,7 +153,7 @@ export function ProfileCard() {
         </a>
 
         <a
-          href="mailto:jitendra.sachwani@example.com"
+          href={`mailto:${profile.email}`}
           className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Email Jitendra"
         >
@@ -161,7 +161,7 @@ export function ProfileCard() {
         </a>
 
         <a
-          href="https://linkedin.com/in/jitendra-sachwani"
+          href={`https://linkedin.com/in/${profile.social.linkedin}`}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
@@ -170,7 +170,7 @@ export function ProfileCard() {
           <LinkedinIcon className="w-4 h-4 md:w-5 h-5" />
         </a>
         <a
-          href="https://github.com/JitendraSachwani"
+          href={`https://github.com/${profile.social.github}`}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"

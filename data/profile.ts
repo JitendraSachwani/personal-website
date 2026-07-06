@@ -7,8 +7,8 @@ export const profile = {
 
   title: "Senior Software Engineer / Full Stack Developer",
   
-  email: "sachwani.jitendra+freelance@gmail.com",
   phone: "+911234567890",
+  email: "sachwani.jitendra+freelance@gmail.com",
   
   company: "Jitendra Sachwani",
   website: "https://jitendra.sachwani.dev",
@@ -22,9 +22,9 @@ export const profile = {
   },
 
   social: {
-    github: "https://github.com/JitendraSachwani",
-    linkedin: "https://linkedin.com/in/jitendra-sachwani",
     twitter: "",
+    linkedin: "https://linkedin.com/in/jitendra-sachwani",
+    github: "https://github.com/JitendraSachwani",
     instagram: "",
   },
 } as const;
