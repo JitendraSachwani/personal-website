@@ -20,7 +20,7 @@ import {
   Braces,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import { shareVCard } from "@/lib/vcard";
+import { shareVCard } from "@/lib/contact";
 import { SkillsCarousel } from "@/components/SkillsCarousel";
 import { profile } from "@/data/profile";
 
@@ -93,17 +93,10 @@ export function ProfileCard() {
       {/* Main Info */}
       <div className="flex flex-col flex-1 items-center justify-center">
         <h1 className="text-2xl md:text-3xl font-bold font-heading tracking-tight text-foreground transition-all duration-300">
-          Jitendra Sachwani
+          {profile.fullName}
         </h1>
         <div className="flex flex-col items-center mt-2">
-          <TypingEffect
-            texts={[
-              "Senior Software Engineer",
-              "Full Stack Developer",
-              "UI/UX Practitioner",
-              "Clean Code Architect",
-            ]}
-          />
+          <TypingEffect texts={[...profile.typingTitles]} />
           <div className="w-12 h-[2px] bg-primary mt-2 mb-3 rounded-full" />
         </div>
         <p className="mt-5 text-sm md:text-base text-muted-foreground leading-relaxed max-w-sm">
@@ -115,7 +108,7 @@ export function ProfileCard() {
       {/* Instructions / Toggle Flip button */}
       <motion.button
         onClick={handleFlip}
-        className="md:hidden flex items-center gap-1 my-2 px-4 py-2 rounded-full border border-border bg-card/80 glassmorphism text-xs font-semibold text-foreground hover:text-primary transition-all duration-300 shadow-sm"
+        className="md:hidden flex items-center gap-1 my-2 px-4 py-2 rounded-full border border-border bg-card text-xs font-semibold text-foreground hover:text-primary transition-all duration-300 shadow-sm"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -141,7 +134,7 @@ export function ProfileCard() {
         <a
           href={`tel:${profile.phone}`}
           rel="noopener noreferrer"
-          className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
+          className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Call Jitendra"
         >
           <PhoneCall className="w-4 h-4 md:w-5 h-5" />
@@ -149,7 +142,7 @@ export function ProfileCard() {
 
         <a
           href={`mailto:${profile.email}`}
-          className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
+          className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Email Jitendra"
         >
           <Mail className="w-4 h-4 md:w-5 h-5" />
@@ -159,7 +152,7 @@ export function ProfileCard() {
           href={`https://linkedin.com/in/${profile.social.linkedin}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
+          className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Open LinkedIn Profile"
         >
           <LinkedinIcon className="w-4 h-4 md:w-5 h-5" />
@@ -168,7 +161,7 @@ export function ProfileCard() {
           href={`https://github.com/${profile.social.github}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2.5 rounded-full border border-border bg-card/50 hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
+          className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
           aria-label="Open GitHub Profile"
         >
           <GithubIcon className="w-4 h-4 md:w-5 h-5" />
@@ -202,7 +195,7 @@ export function ProfileCard() {
         <section>
           <div className="flex items-center gap-2 text-primary font-bold font-heading mb-2">
             <div
-              className="flex items-center justify-center w-10 h-10 rounded-xl border border-border bg-card/80 glassmorphism text-foreground hover:text-primary hover:scale-105 transition-all duration-300 shadow-sm"
+              className="flex items-center justify-center w-10 h-10 rounded-xl border border-border bg-card text-foreground hover:text-primary hover:scale-105 transition-all duration-300 shadow-sm"
               aria-label="Flip to home"
               onClick={handleFlip}
             >
@@ -330,13 +323,13 @@ export function ProfileCard() {
             }}
           >
             {/* Front Card */}
-            <div className="absolute inset-0 w-full h-full rounded-premium bg-card/90 dark:bg-card/70 border border-border shadow-premium-light dark:shadow-premium-dark backface-hidden overflow-visible mt-14">
+            <div className="absolute inset-0 w-full h-full rounded-premium bg-card border border-border shadow-premium-light dark:shadow-premium-dark backface-hidden overflow-visible mt-14">
               {renderFrontContent()}
             </div>
 
             {/* Back Card */}
             <div
-              className="absolute inset-0 w-full h-full rounded-premium bg-card/90 dark:bg-card/70 border border-border shadow-premium-light dark:shadow-premium-dark backface-hidden overflow-hidden"
+              className="absolute inset-0 w-full h-full rounded-premium bg-card border border-border shadow-premium-light dark:shadow-premium-dark backface-hidden overflow-hidden"
               style={{ transform: "rotateY(180deg)" }}
             >
               {renderBackContent()}
@@ -348,12 +341,12 @@ export function ProfileCard() {
       {/* Desktop Card Layout (Side-by-side FRONT & BACK, hidden on Mobile/Tablet) */}
       <div className="hidden md:flex flex-row justify-center gap-8 items-stretch mt-16">
         {/* Left Card */}
-        <div className="w-[360px] min-h-[530px] rounded-premium bg-card/85 dark:bg-card/65 border border-border shadow-premium-light dark:shadow-premium-dark relative transition-all duration-500 flex flex-col justify-between">
+        <div className="w-[360px] min-h-[530px] rounded-premium bg-card border border-border shadow-premium-light dark:shadow-premium-dark relative transition-all duration-500 flex flex-col justify-between">
           {renderFrontContent()}
         </div>
 
         {/* Right Card */}
-        <div className="w-[360px] min-h-[530px] rounded-premium bg-card/85 dark:bg-card/65 border border-border shadow-premium-light dark:shadow-premium-dark relative overflow-hidden transition-all duration-500 flex flex-col justify-between">
+        <div className="w-[360px] min-h-[530px] rounded-premium bg-card border border-border shadow-premium-light dark:shadow-premium-dark relative overflow-hidden transition-all duration-500 flex flex-col justify-between">
           {renderBackContent()}
         </div>
       </div>

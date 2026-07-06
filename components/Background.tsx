@@ -27,13 +27,7 @@ export function Background() {
   return (
     <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none select-none">
       {/* Background base transition color */}
-      <div
-        // className="absolute inset-0 bg-light-bg dark:bg-dark-bg transition-colors duration-700"
-        className="absolute inset-0 transition-colors duration-700"
-        style={{
-          background: "var(--background)",
-        }}
-      />
+      <div className="absolute inset-0 bg-background transition-colors duration-700" />
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.06] dark:opacity-[0.035] transition-opacity duration-500">

@@ -8,11 +8,16 @@ export const profile = {
   title: "Senior Software Engineer",
   secondaryTitle: "Full Stack Developer",
   combinedTitle: "Senior Software Engineer | Full Stack Developer",
+  typingTitles: [
+    "Senior Software Engineer",
+    "Full Stack Developer",
+    "UI/UX Practitioner",
+    "Clean Code Architect",
+  ],
 
   bio: "Building scalable software with clean architecture and beautiful user experiences.",
   subBio: "Specializing in Next.js, React, Node.js, and Cloud Infrastructure.",
 
-  
   phone: "+911234567890",
   email: "sachwani.jitendra+freelance@gmail.com",
 

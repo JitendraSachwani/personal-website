@@ -4,10 +4,16 @@
   /* Colors */
   --color-primary: #ff4d6d;
   --color-accent: #ff6b81;
-  --color-dark-bg: #0B0F19;
+  
+  /* --color-dark-bg: #0B0F19;
   --color-dark-card: #121826;
   --color-light-bg: #FAFAFC;
-  --color-light-card: #FFFFFF;
+  --color-light-card: #FFFFFF; */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
 
   /* Typography */
   --font-heading: var(--font-space-grotesk), sans-serif;
@@ -15,9 +21,12 @@
   --font-mono: var(--font-jetbrains-mono), monospace;
 
   /* Shadows */
-  --shadow-premium-light: 0 20px 40px -15px rgba(11, 15, 25, 0.06), 0 0 0 1px rgba(11, 15, 25, 0.04);
-  --shadow-premium-dark: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  /* --shadow-premium-light: 0 20px 40px -15px rgba(11, 15, 25, 0.06), 0 0 0 1px rgba(11, 15, 25, 0.04);
+  --shadow-premium-dark: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04); */
   --shadow-glow: 0 0 50px -10px rgba(255, 77, 109, 0.15);
+
+  --shadow-premium-light: 0 12px 32px rgba(15,23,42,0.08), 0 2px 8px rgba(15,23,42,0.04);
+  --shadow-premium-dark: 0 20px 50px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.25);
 
   /* Radius */
   --radius-premium: 20px;
