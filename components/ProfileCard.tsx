@@ -183,7 +183,17 @@ export function ProfileCard() {
       {/* CTA Buttons */}
       <div className="grid grid-cols-2 gap-3 w-full mt-2">
         <button
-          onClick={shareVCard}
+          onClick={async () => {
+            try {
+              await navigator.share({
+                title: "Test",
+                text: "Hello",
+              });
+            } catch (e) {
+              console.error(e);
+              alert(String(e));
+            }
+          }}
           className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-primary hover:bg-accent text-white font-semibold text-xs md:text-sm shadow-lg shadow-primary/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
         >
           <UserPlus className="w-4 h-4" />
