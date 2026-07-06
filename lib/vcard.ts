@@ -9,18 +9,16 @@ export async function shareVCard() {
   try {
     await navigator.share({
       title: profile.fullName,
-      files: [file],
+      files: [new File(["Hello"], "hello.txt", { type: "text/plain" })],
     });
   } catch (err) {
-    // User cancelled the share dialog
     if ((err as DOMException).name === "AbortError") {
       return;
     }
-
     console.error("Share failed, falling back to download", err);
 
-    // Browser/device bug? Download instead.
-    downloadVCard(vcardData);
+    alert(`Failed to share vCard. Falling back to download. Error: ${(err as Error).message}`);
+    // downloadVCard(vcardData);
   }
 }
 
