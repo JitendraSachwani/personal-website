@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Background } from "@/components/Background";
+import { profile } from "@/data/profile";
 
 const inter = Inter({
   variable: "--font-inter",

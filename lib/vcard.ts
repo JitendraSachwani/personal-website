@@ -23,10 +23,6 @@ export async function shareVCard() {
   });
 
   try {
-    alert(`canShare: ${typeof navigator.canShare?.({ files: [file] })}`)
-
-    console.log(`navigator.canShare: ${navigator.canShare?.({ files: [file] })}`);
-    // Share if supported
     if (navigator.canShare?.({ files: [file] })) {
       await navigator.share({
         title: profile.fullName,
@@ -35,6 +31,8 @@ export async function shareVCard() {
       });
       return;
     }
+
+    alert("Web Share API not supported or cannot share files. Falling back to download.");
 
     console.log("Web Share API not supported or cannot share files. Falling back to download.");
 

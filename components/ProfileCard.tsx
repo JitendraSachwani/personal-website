@@ -20,6 +20,7 @@ import {
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { shareVCard } from "@/lib/vcard";
 import { SkillsCarousel } from "@/components/SkillsCarousel";
+import { profile } from "@/data/profile";
 
 // Typings for typewriter
 function TypingEffect({ texts }: { texts: string[] }) {
@@ -97,7 +98,7 @@ export function ProfileCard() {
           <div className="relative w-full h-full rounded-full overflow-hidden border border-border">
             <Image
               src="/profile.jpg"
-              alt="Jitendra Sachwani"
+              alt={profile.fullName}
               fill
               sizes="(max-width: 768px) 112px, 128px"
               priority
