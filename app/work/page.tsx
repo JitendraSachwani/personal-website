@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, Briefcase, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
+import { profile } from "@/data/profile";
 
 interface Project {
   id: string;
@@ -20,81 +21,70 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "analytics",
-    name: "Analytics Dashboard",
-    category: "Full Stack",
-    description:
-      "A real-time analytics dashboard for monitoring user behavior, acquisition funnels, and performance metrics. Features high-performance visualizations.",
-    additionalTags: ["Realtime", "Data Viz"],
-    toolTags: ["Next.js", "Tailwind CSS", "MongoDB", "Recharts"],
-    image: "/analytics.jpg",
-    link: "https://github.com/JitendraSachwani/analytics-dashboard",
-  },
-  {
-    id: "ecommerce",
-    name: "E-Commerce Platform",
-    category: "Full Stack",
-    description:
-      "A modern e-commerce platform with a headless architecture, seamless shopping experience, multi-tenant inventory, and secure Stripe checkout.",
-    additionalTags: ["Payments", "Headless"],
-    toolTags: ["React", "Node.js", "MongoDB", "Stripe"],
-    image: "/ecommerce.jpg",
-    link: "https://github.com/JitendraSachwani/ecommerce-platform",
-  },
-  {
-    id: "tasks",
-    name: "Task Management App",
+    id: "personal-portfolio",
+    additionalTags: ["UI/UX", "Performance"],
+    image: "/personal-portfolio.png",
     category: "Frontend",
-    description:
-      "A productivity app to manage tasks, collaborate with teams, track sprint progress with drag-and-drop boards, and generate burndown charts.",
-    additionalTags: ["Productivity", "SaaS"],
-    toolTags: ["React", "Tailwind CSS", "Framer Motion"],
-    image: "/tasks.jpg",
-    link: "https://github.com/JitendraSachwani/task-manager",
-  },
-  {
-    id: "portfolio",
     name: "Personal Portfolio",
-    category: "Frontend",
     description:
-      "A premium personal portfolio website showcasing work using fluid transitions, 3D card tilt gestures, and responsive layouts.",
-    additionalTags: ["Creative", "Creative Dev"],
+      "A premium personal portfolio built with focus on design, performance, and user experience. Features vCard Download, dark mode, fluid transitions, 3D card tilt gestures and a responsive layout.",
     toolTags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    image: "/portfolio.jpg",
-    link: "https://github.com/JitendraSachwani/personal-website",
+    link: `${profile.website}`,
   },
   {
-    id: "ai-chat",
-    name: "AI Chat Application",
+    id: "lhoopa",
+    additionalTags: ["Real Estate", "AI", "CMS"],
+    image: "/lhoopa.png",
+    name: "PropTech Platform (Lhoopa)",
     category: "Full Stack",
     description:
-      "An interactive chatbot leveraging vector embeddings, semantic search, and streaming responses to answer questions on documents.",
-    additionalTags: ["AI", "Pinecone"],
-    toolTags: ["React", "Node.js", "Tailwind CSS", "OpenAI"],
-    image: "/analytics.jpg",
-    link: "https://github.com/JitendraSachwani/ai-chat-app",
+      "A proptech platform that tackles the affordable housing backlog in emerging markets by decentralizing real estate. Features AI-powered chatbot, decentralized renovation using their own CMS, and localized selling via GCash & Stripe integration.",
+    toolTags: ["AI Chatbot", "React", "Node.js", "MongoDB", "AWS", "GCash", "Stripe"],
+    link: "https://www.lhoopa.com",
   },
   {
-    id: "browser-auto",
+    id: "investment-tracker",
+    additionalTags: ["Realtime", "Data Viz"],
+    image: "/analytics.jpg",
+    name: "Investment Tracker",
+    category: "Full Stack",
+    description:
+      "A real-time investment tracking dashboard that visualizes all asset classes and provides insights into performance and trends.",
+    toolTags: ["React", "Python", "MongoDB", "WebSockets", "Kafka", "Kite API"],
+    link: "https://github.com/JitendraSachwani/investment-tracker/tree/master/frontend",
+  },
+  {
+    id: "architecture-portfolio",
+    additionalTags: ["UI/UX"],
+    image: "/arch-portfolio.png",
+    category: "Frontend",
+    name: "Architectural Portfolio (Visionary Architects)",
+    description:
+      "A modern portfolio website for an architectural firm, showcasing their projects with a focus on visual storytelling and responsive design.",
+    toolTags: ["React", "Tailwind CSS", "Framer Motion"],
+    link: "https://visionary-architects.vercel.app/",
+  },
+  {
+    id: "homelab-infra",
+    additionalTags: ["DevOps", "AWS"],
+    image: "/homelab-infra.png",
+    name: "Homelab Infrastructure",
+    category: "Backend",
+    description:
+      "A fully automated homelab infrastructure setup using Terraform and AWS, with monitoring and alerting via Grafana and Prometheus.",
+    toolTags: ["Terraform", "Ansible", "Proxmox", "OCI / AWS", "Node.js", "Grafana"],
+    link: "https://github.com/JitendraSachwani/homelab-infra",
+  },
+  {
+    id: "browser-automation-tool",
+    additionalTags: ["Automation", "QA"],
+    image: "/browser-automation-tool.png",
     name: "Browser Automation Tool",
     category: "Backend",
     description:
       "A scalable task scheduling and execution server using Puppeteer and Playwright, optimized for scraper pipelines and visual testing.",
-    additionalTags: ["Automation", "QA"],
-    toolTags: ["Node.js", "Playwright", "Docker", "Redis"],
-    image: "/tasks.jpg",
+    toolTags: ["Ruby", "Rails", "Browserstack", "Playwright", "Docker", "Redis"],
     link: "https://github.com/JitendraSachwani/browser-automation-tool",
-  },
-  {
-    id: "infra-dashboard",
-    name: "Infrastructure Dashboard",
-    category: "Backend",
-    description:
-      "An AWS optimizer dashboard utilizing Terraform configurations to track cloud deployments, check server health, and automate shutdowns.",
-    additionalTags: ["DevOps", "AWS"],
-    toolTags: ["Terraform", "AWS", "Node.js", "Grafana"],
-    image: "/analytics.jpg",
-    link: "https://github.com/JitendraSachwani/infra-dashboard",
   },
 ];
 
@@ -139,16 +129,13 @@ export default function WorkPage() {
           >
             <ChevronLeft className="w-5 h-5" />
           </Link>
-          <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 text-primary">
-            <Briefcase className="w-6 h-6" />
-          </div>
           <h1 className="text-3xl md:text-4xl font-extrabold font-heading tracking-tight text-foreground">
-            My Work
+            Curated Projects
           </h1>
         </div>
         <p className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed font-body">
-          Here are some of the projects I&apos;ve worked on. Each one crafted with care, performance
-          and great user experience.
+          A curated collection of websites, applications and platforms I've designed and built, from
+          polished marketing sites to scalable full-stack systems.
         </p>
       </section>
 
@@ -254,7 +241,7 @@ export default function WorkPage() {
         </AnimatePresence>
       </motion.div>
 
-      {/* GitHub Call-to-action footer */}
+      {/* GitHub CTA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
