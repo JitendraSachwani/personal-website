@@ -18,7 +18,7 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import { downloadVCard } from "@/lib/vcard";
+import { shareVCard } from "@/lib/vcard";
 import { SkillsCarousel } from "@/components/SkillsCarousel";
 
 // Typings for typewriter
@@ -182,7 +182,7 @@ export function ProfileCard() {
       {/* CTA Buttons */}
       <div className="grid grid-cols-2 gap-3 w-full mt-2">
         <button
-          onClick={downloadVCard}
+          onClick={shareVCard}
           className="flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-primary hover:bg-accent text-white font-semibold text-xs md:text-sm shadow-lg shadow-primary/20 transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0"
         >
           <UserPlus className="w-4 h-4" />
@@ -292,7 +292,7 @@ export function ProfileCard() {
       {/* Save Contact CTA */}
       <div className="mt-6">
         <button
-          onClick={downloadVCard}
+          onClick={shareVCard}
           className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-full border border-border bg-card/85 hover:bg-primary hover:text-white dark:hover:bg-primary text-foreground font-semibold text-xs md:text-sm shadow-sm transition-all duration-300 cursor-pointer transform hover:-translate-y-0.5 active:translate-y-0 hover:shadow-lg hover:shadow-primary/20"
         >
           <UserPlus className="w-4 h-4" />
