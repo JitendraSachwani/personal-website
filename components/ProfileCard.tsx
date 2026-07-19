@@ -149,7 +149,7 @@ export function ProfileCard() {
         </a>
 
         <a
-          href={`https://linkedin.com/in/${profile.social.linkedin}`}
+          href={profile.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
@@ -158,7 +158,7 @@ export function ProfileCard() {
           <LinkedinIcon className="w-4 h-4 md:w-5 h-5" />
         </a>
         <a
-          href={`https://github.com/${profile.social.github}`}
+          href={profile.social.github}
           target="_blank"
           rel="noopener noreferrer"
           className="p-2.5 rounded-full border border-border bg-card hover:bg-primary/10 hover:border-primary hover:text-primary transition-all duration-300 shadow-sm"
