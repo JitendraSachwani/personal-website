@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -59,12 +61,11 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-          {/* <div className="noise-overlay" /> */}
-          {/* <Background /> */}
           <div className="fixed top-6 right-6 px-6 z-50 transition-all duration-300">
             <ThemeToggle />
           </div>
           {children}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
